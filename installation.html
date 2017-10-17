@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>installation</title>
+
+
+<style type="text/css">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	position: relative;
+	margin: .5em 0;
+	-webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	-moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	border-left: 10px solid #358ccb;
+	background-color: #fdfdfd;
+	background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-size: 3em 3em;
+	background-origin: content-box;
+	overflow: visible;
+	padding: 0;
+}
+
+code[class*="language"] {
+	max-height: inherit;
+	height: 100%;
+	padding: 0 1em;
+	display: block;
+	overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: #fdfdfd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	position: relative;
+	padding: .2em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	border-radius: 0.3em;
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline;
+	white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+	content: '';
+	z-index: -2;
+	display: block;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.18em;
+	width: 40%;
+	height: 20%;
+	max-height: 13em;
+	-webkit-box-shadow: 0px 13px 8px #979797;
+	-moz-box-shadow: 0px 13px 8px #979797;
+	box-shadow: 0px 13px 8px #979797;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+	right: 0.75em;
+	left: auto;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+	transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7D8B99;
+}
+
+.token.punctuation {
+	color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+	color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+	color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+	font-weight: normal;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	pre[class*="language-"]:before,
+	pre[class*="language-"]:after {
+		bottom: 14px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+	color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers {
+	padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers code {
+	padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers .line-numbers-rows {
+	left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+pre[data-line] code {
+	position: relative;
+	padding-left: 4em;
+}
+pre .line-highlight {
+	margin-top: 0;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Installation</h1>
+
+<h2 id="toc_1">Table of contents</h2>
+
+<ul>
+<li><a href="#python">Installing Python with Anaconda</a></li>
+<li><a href="#virtualenv">Virtual Environment Setup</a></li>
+<li><a href="#installpip">Installing with pip (easy)</a></li>
+<li><a href="#installsetup">Installing with setup.py (less easy)</a>
+
+<ul>
+<li><a href="#get-the-source-code">Get the Source Code</a><br></li>
+<li><a href="#mac">Mac OS X</a></li>
+<li><a href="#linux">Linux (Ubuntu)</a></li>
+<li><a href="#windows">Windows</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a>
+<a name = "python"></a></li>
+</ul></li>
+</ul>
+
+<h2 id="toc_2">Installing Python</h2>
+
+<p>I would highly recommend using <a href="https://www.anaconda.com/download/#macos">Anaconda Python 3</a>, which is a distribution of Python that comes pre-bundled with many of the most popular packages, including most of those used by GENFIRE. Choose the installer that matches your operating system, and make sure to choose Python 3.</p>
+
+<p>If you are familiar with Python and have an existing installation you would like to use, that is fine, but be aware we will be less likely to provide troubleshooting if you deviate from the recommended installation procedure.</p>
+
+<p><a name = "virtualenv"></a></p>
+
+<h2 id="toc_3">Virtual environments</h2>
+
+<p>A virtual environment is a sandbox environment where you can install specific versions of various software packages without affecting the rest of your system. This is not required for GENFIRE to work, but it is highly recommended. A smart practice is to have a separate python environment for all of your major projects. </p>
+
+<p>You can use either Anaconda&#39;s command <code>conda create</code> or <code>virtualenv</code> to create a virtual environment. Open a terminal and navigate to a new folder.</p>
+
+<h3 id="toc_4">Virtualenv</h3>
+
+<div><pre><code class="language-none">pip3 install virtualenv
+virtualenv -p python3 yourenvname
+source yourenvname/bin/activate</code></pre></div>
+
+<h3 id="toc_5">Anaconda</h3>
+
+<div><pre><code class="language-none">conda create -n yourenvname python=3.6 anaconda
+activate yourenvname</code></pre></div>
+
+<p>More details can be found <a href="https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/">here</a> or just use Google. If you are on Windows and the command <code>pip3</code> is not found, you will have to provide the full path, i.e.</p>
+
+<div><pre><code class="language-none">C:\path\to\Anaconda\Scripts\pip3 install virtualenv</code></pre></div>
+
+<p>Or add the path prefix to your PATH environmental variable so that the OS can find the executable automatically.</p>
+
+<p>Once you activate the virtual environment, your terminal prompt should change, which is a helpful indicator. If you would like to make this environment persistent on Mac or Linux, you can add the above <code>source</code> command to the end of you <code>~/.bash_profile</code> or <code>~/.bashrc</code> file, respectively. </p>
+
+<p><a name = "installpip"></a></p>
+
+<h2 id="toc_6">Installing with pip</h2>
+
+<p><code>GENFIRE</code> is hosted on <a href="https://pypi.python.org/pypi">PyPi</a>, and thus can be easily installed with <code>pip</code>:</p>
+
+<div><pre><code class="language-none">pip3 install genfire</code></pre></div>
+
+<p>You may need root privileges (sudo), depending on your environment. If this <code>pip3</code> installation is successful, you can now open the GUI by running the launch.py script inside of the package</p>
+
+<div><pre><code class="language-none">python3 /path/to/genfire/gui/launch.py</code></pre></div>
+
+<p>Alternatively, on Mac/Linux you should have access to the shortcut <code>genfire</code> which does the same thing <em>(If anybody knows a reliable way to create a similar, installable shortcut command on Windows, I would love to hear about it)</em></p>
+
+<div><pre><code class="language-none">genfire</code></pre></div>
+
+<h4 id="toc_7">Troubleshooting pip</h4>
+
+<p>If an error occurs when using <code>pip3</code> to install the dependencies for GENFIRE, you may try manually installing that dependency with <code>pip</code> and then trying to install GENFIRE. For example, if you receive an error about PyQt5 not being installed, try manually installing it with <code>pip install PyQt5</code>. If this still fails, you can try instead installing with setup.py, as described below.</p>
+
+<p><a name = "installsetup"></a></p>
+
+<h2 id="toc_8">Installing with setup.py</h2>
+
+<p>If installing with <code>pip</code> fails, you can also try installing the package manually</p>
+
+<h3 id="toc_9">Get the Source Code</h3>
+
+<p>To install <code>GENFIRE</code> as a python package, first 
+<a href="http://www.github.com/genfire-em">download the source code</a>. Then follow the procedure for 
+your operating system.</p>
+
+<p><a name = "mac"></a></p>
+
+<h3 id="toc_10">Mac OS X</h3>
+
+<p>Python is preinstalled on Mac OS X, but it is generally a bad idea to alter the system
+python in /usr/bin as some programs depend on it. I would highly recommend using the
+package manager homebrew to create a python environment for you. The following
+commands will install homebrew and python3</p>
+
+<div><pre><code class="language-none">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+$ brew install python3</code></pre></div>
+
+<p>Once that&#39;s done, navigate to the top source code directory. That&#39;s the same
+folder as requirements.txt and setup.py</p>
+
+<div><pre><code class="language-none">$ cd /path/to/GENFIRE</code></pre></div>
+
+<p>Install (most of the) dependencies using pip3, you may need to prepend the command with sudo depending on your system</p>
+
+<div><pre><code class="language-none">$ pip3 install --upgrade pip
+$ pip3 install -r requirements.txt</code></pre></div>
+
+<p>You will also need sip and PyQt5        </p>
+
+<div><pre><code class="language-none">$ brew install sip
+$ brew install pyqt</code></pre></div>
+
+<p>You should now have all the dependencies necessary to run <code>GENFIRE</code>. To install it, make
+sure you are in the directory with setup.py and enter the follow. Again, you may need sudo</p>
+
+<div><pre><code class="language-none">$ python3 setup.py install</code></pre></div>
+
+<p>If everything worked, you can now launch the gui from the command line with</p>
+
+<div><pre><code class="language-none">$ genfire</code></pre></div>
+
+<p>You can also use the code as any other python package. Here&#39;s an example of launching the gui from within python</p>
+
+<div><pre><code class="language-none">$ python3</code></pre></div>
+
+<div><pre><code class="language-python">import GENFIRE
+GENFIRE.gui.launch.main()</code></pre></div>
+
+<h4 id="toc_11">(Optional) Turbo-charge <code>GENFIRE</code> with <code>FFTW</code></h4>
+
+<p><code>GENFIRE</code> can make use of <a href="https://pypi.python.org/pypi/pyFFTW"><code>pyFFTW</code></a>, which wraps the <a href="http://www.fftw.org/"><code>FFTW</code></a> library. I have tested a number of
+FFT routines including those in <code>NumPy</code>, <code>SciPy</code>, and <code>pyFFTW</code>, and found this to be the fastest one by a factor of 2-3.</p>
+
+<p><em>The following are details for installing <code>FFTW</code> from source, but recently pip has begun to support precomiled libraries for the package, so you should first try the easy way with</em></p>
+
+<div><pre><code class="language-none">pip3 install pyfftw</code></pre></div>
+
+<p><em>if this fails, then proceed with building the <code>FFTW</code> libraries by hand and then reinvoking pip as described below</em></p>
+
+<p>In order for <code>GENFIRE</code> to use <code>pyFFTW</code> you must install <a href="http://www.fftw.org/download.html">the <code>FFTW</code> libraries</a>. Download the source code, decompress it, and navigate into the unpacked directory
+from your terminal. <code>pyFFTW</code> needs <code>FFTW</code> to be compiled for all precision types, so you have to compile it three times.
+Use the following commands</p>
+
+<div><pre><code class="language-none">$ ./configure --enable-threads --enable-shared
+$ make
+$ sudo make install</code></pre></div>
+
+<div><pre><code class="language-none">$ ./configure --enable threads --enable-shared --enable-float
+$ make
+$ sudo make install</code></pre></div>
+
+<div><pre><code class="language-none">$ ./configure --enable-threads --enable-shared --enable-long-double
+$ make
+$ sudo make install</code></pre></div>
+
+<p>Now, install pyFFTW with pip and and test that it worked</p>
+
+<div><pre><code class="language-none">$ pip3 install pyfftw
+$ python -c &quot;import pyfftw&quot;</code></pre></div>
+
+<p>If you don&#39;t receive an error, then it was successful. If you get an error along the lines of
+&quot;ImportError: libfftw3l.so cannot open shared object file&quot; then you need to set your <code>DYLD_LIBRARY_PATH</code>
+environmental variable so that <code>pyFFTW</code> can find the libraries</p>
+
+<div><pre><code class="language-none">$ export DYLD_LIBRARY_PATH=/usr/local/lib:$DYLD_LIBRARY_PATH&lt;</code></pre></div>
+
+<p>If the <code>FFTW</code> .so files are somewhere other than /usr/local/lib, then you should replace that part appropriately.
+To make this change permanent add the above line to the end of your ~/.bash_profile</p>
+
+<p><a name = "linux"></a></p>
+
+<h3 id="toc_12">Linux (Ubuntu 14.04)</h3>
+
+<p>Navigate to the source code directory. That&#39;s the same folder as requirements.txt and setup.py</p>
+
+<div><pre><code class="language-none">$ cd /path/to/GENFIRE</code></pre></div>
+
+<p>Install (most of the) dependencies using pip</p>
+
+<div><pre><code class="language-none">$ pip3 install --upgrade pip
+$ sudo pip3 install -r requirements.txt</code></pre></div>
+
+<p>You will also need sip and PyQt5 this command should install both.</p>
+
+<div><pre><code class="language-none">$ sudo apt-get install python3-pyqt5</code></pre></div>
+
+<p>You should now have all the dependencies necessary to run GENFIRE. To install it, make
+sure you are in the directory with setup.py and enter</p>
+
+<div><pre><code class="language-none">$ sudo python setup.py install</code></pre></div>
+
+<p>If everything worked, you can now launch the gui from the command line with</p>
+
+<div><pre><code class="language-none">$ genfire</code></pre></div>
+
+<p>You can also use the code as any other python package. Here&#39;s an example of launching the gui from within python</p>
+
+<div><pre><code class="language-none">$ python3</code></pre></div>
+
+<div><pre><code class="language-python">import GENFIRE&lt;br&gt;
+GENFIRE.gui.launch.main()</code></pre></div>
+
+<h4 id="toc_13">(Optional) Turbo-charge <code>GENFIRE</code> with <code>FFTW</code></h4>
+
+<p><code>GENFIRE</code> can make use of <a href="https://pypi.python.org/pypi/pyFFTW"><code>pyFFTW</code></a>, which wraps the <a href="www.fftw.org"><code>FFTW</code></a> library. I have tested a number of
+FFT routines including those in <code>NumPy</code>, <code>SciPy</code>, and <code>pyFFTW</code>, and found this to be the fastest one by a factor of 2-3.</p>
+
+<p><em>The following are details for installing <code>FFTW</code> from source, but recently pip has begun to support precomiled libraries for the package, so you should first try the easy way with</em></p>
+
+<div><pre><code class="language-none">pip3 install pyfftw</code></pre></div>
+
+<p><em>if this fails, then proceed with building the <code>FFTW</code> libraries by hand and then reinvoking pip as described below</em></p>
+
+<p>In order for <code>GENFIRE</code> to use <code>pyFFTW</code> you must <a href="http://www.fftw.org/download.html">install
+the <code>FFTW</code> libraries</a>. Download the source code, decompress it, and navigate into the unpacked directory
+from your terminal. <code>pyFFTW</code> needs <code>FFTW</code> to be compiled for all precision types, so you have to compile it three times.
+Use the following commands</p>
+
+<div><pre><code class="language-none">$ ./configure --enable-threads --enable-shared
+$ make
+$ sudo make install</code></pre></div>
+
+<div><pre><code class="language-none">$ ./configure --enable-threads --enable-shared --enable-float
+$ make
+$ sudo make install</code></pre></div>
+
+<div><pre><code class="language-none">$ ./configure --enable threads --enable-shared --enable-long-double
+$ make
+$ sudo make install</code></pre></div>
+
+<p>If you don&#39;t receive an error, then it was successful. If you get an error along the lines of
+&quot;ImportError: libfftw3l.so cannot open shared object file&quot; then you need to set your <code>LD_LIBRARY_PATH</code>
+environmental variable so that <code>pyFFTW</code> can find the libraries</p>
+
+<div><pre><code class="language-none">$ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH&lt;</code></pre></div>
+
+<p>If the <code>FFTW</code> .so files are somewhere other than /usr/local/lib, then you should replace that part appropriately.
+To make this change permanent add the above line to the end of your ~/.bashrc</p>
+
+<p><a name="windows"></a></p>
+
+<h3 id="toc_14">Windows 10</h3>
+
+<p>For python3 on Windows 10 I would recommend using <a href="https://www.continuum.io/downloads">Anaconda from Continuum Analytics</a>. It&#39;s a distribution of python that contains
+most of the packages used by <code>GENFIRE</code> all wrapped into a simple-to-use installer. <em>Note you must use python3.</em>
+Once you have python setup, open up a cmd prompt and navigate to the source directory.
+That&#39;s the same folder as requirements.txt and setup.py</p>
+
+<div><pre><code class="language-none">$ C:\path\to\Anaconda\python3 setup.py install</code></pre></div>
+
+<p>If everything worked you can now launch the gui.</p>
+
+<div><pre><code class="language-none">$ C:\path\to\Anaconda\python GENFIRE\gui\launch.py</code></pre></div>
+
+<p>You can also use the code as any other python package. Here&#39;s an example of launching the gui from within python</p>
+
+<div><pre><code class="language-none">$ C:\path\to\Anaconda\python3</code></pre></div>
+
+<div><pre><code class="language-python">import GENFIRE
+GENFIRE.gui.launch.main()</code></pre></div>
+
+<h4 id="toc_15">(Optional) Turbo-charge <code>GENFIRE</code> with <code>FFTW</code></h4>
+
+<p><code>GENFIRE</code> can make use of <a href="https://pypi.python.org/pypi/pyFFTW"><code>pyFFTW</code></a>, which wraps the <a href="www.fftw.org"><code>FFTW</code></a> library. I have tested a number of
+FFT routines including those in <code>NumPy</code>, <code>SciPy</code>, and <code>pyFFTW</code>, and found this to be the fastest one by a factor of 2-3.</p>
+
+<p><em>The following are details for installing FFTW from source, but recently pip has begun to support precomiled libraries for the package, so you should first try the easy way with</em></p>
+
+<div><pre><code class="language-none">$ C:\path\to\Anaconda\Scripts\pip3 install pyfftw</code></pre></div>
+
+<p><em>if this fails, then consult the <a href="www.fftw.org"><code>FFTW</code> documentation</a></em></p>
+
+<p><a name="troubleshooting"></a></p>
+
+<h2 id="toc_16">Installation Troubleshooting</h2>
+
+<p>If you have trouble installing <code>PyQt5</code> or <code>sip</code>, consult their <a href="http://pyqt.sourceforge.net/Docs/PyQt4/installation.html">documentation</a>
+If you have some problem with the &quot;pip3 install -r requirements.txt&quot; step, you can view
+the requirements.txt file to see the packages that are necessary, and try to        install them one-by-one.</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+
+</body>
+
+</html>
