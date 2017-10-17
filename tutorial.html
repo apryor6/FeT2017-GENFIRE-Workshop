@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>tutorial</title>
+
+
+<style type="text/css">
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	position: relative;
+	margin: .5em 0;
+	-webkit-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	-moz-box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+	border-left: 10px solid #358ccb;
+	background-color: #fdfdfd;
+	background-image: -webkit-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -moz-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -ms-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: -o-linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+	background-size: 3em 3em;
+	background-origin: content-box;
+	overflow: visible;
+	padding: 0;
+}
+
+code[class*="language"] {
+	max-height: inherit;
+	height: 100%;
+	padding: 0 1em;
+	display: block;
+	overflow: auto;
+}
+
+/* Margin bottom to accomodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background-color: #fdfdfd;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	position: relative;
+	padding: .2em;
+	-webkit-border-radius: 0.3em;
+	-moz-border-radius: 0.3em;
+	-ms-border-radius: 0.3em;
+	-o-border-radius: 0.3em;
+	border-radius: 0.3em;
+	color: #c92c2c;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	display: inline;
+	white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+	content: '';
+	z-index: -2;
+	display: block;
+	position: absolute;
+	bottom: 0.75em;
+	left: 0.18em;
+	width: 40%;
+	height: 20%;
+	max-height: 13em;
+	-webkit-box-shadow: 0px 13px 8px #979797;
+	-moz-box-shadow: 0px 13px 8px #979797;
+	box-shadow: 0px 13px 8px #979797;
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+	-ms-transform: rotate(-2deg);
+	-o-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+}
+
+:not(pre) > code[class*="language-"]:after,
+pre[class*="language-"]:after {
+	right: 0.75em;
+	left: auto;
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	-o-transform: rotate(2deg);
+	transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7D8B99;
+}
+
+.token.punctuation {
+	color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+	color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+	color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+	color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+	font-weight: normal;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+	pre[class*="language-"]:before,
+	pre[class*="language-"]:after {
+		bottom: 14px;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+}
+
+/* Plugin styles */
+.token.tab:not(:empty):before,
+.token.cr:before,
+.token.lf:before {
+	color: #e0d7d1;
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers {
+	padding-left: 0;
+}
+
+pre[class*="language-"].line-numbers code {
+	padding-left: 3.8em;
+}
+
+pre[class*="language-"].line-numbers .line-numbers-rows {
+	left: 0;
+}
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-left: 0;
+}
+pre[data-line] code {
+	position: relative;
+	padding-left: 4em;
+}
+pre .line-highlight {
+	margin-top: 0;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Tutorial</h1>
+
+<h2 id="toc_1">Table of contents</h2>
+
+<ul>
+<li><a href="#intro">Introduction</a></li>
+<li><a href="#gui-params">Other GUI parameters</a></li>
+<li><a href="#inspecting-data">Inspecting the data</a></li>
+<li><a href="#running-a-recon">Running a reconstruction</a></li>
+<li><a href="#reconstruction-summary">Reconstruction Summary</a></li>
+<li><a href="#volume-slicer">Volume Slicer</a></li>
+<li><a href="#exploring-variations">Exploring Variations</a>
+
+<ul>
+<li><a href="#dft-fft">DFT vs FFT Gridding</a><br></li>
+<li><a href="#iteration-num">Iteration Number</a></li>
+<li><a href="#interp-distance">Interpolation Cutoff Distance</a></li>
+<li><a href="#oversampling-ratio">Oversampling Ratio</a></li>
+<li><a href="#misaligned-data">Misaligned Data</a></li>
+<li><a href="#missing-wedge">Missing Wedge</a></li>
+<li><a href="#noisy-data">Noisy Data</a></li>
+<li><a href="#res-ex-supp">Resolution Extension/Suppression</a></li>
+<li><a href="#tight-support">Refining the Support</a></li>
+</ul></li>
+</ul>
+
+<p>This tutorial will walk you through your first GENFIRE 3D reconstruction. You will reconstruct a tomographic tilt series of a small FePt nanoparticle simulated with multislice simulation using <a href="www.prism-em.com">Prismatic</a>. You should already have GENFIRE installed, but if you have not done so you can find the installation instructions <a href="http://genfire-em.com/installation/">here</a>.</p>
+
+<p>First thing&#39;s first -- open the GUI. It looks like this</p>
+
+<p><img src="img/gui.png" width=500px></img></p>
+
+<p>This is the main window for running GENFIRE reconstructions. Here you can select the filenames
+containing the projection images, Euler angles, 3D support and set reconstruction parameters
+like the number of iterations to run and the oversampling ratio (the amount of zero padding to add
+to the projections prior to gridding). </p>
+
+<p><a name = "intro"></a></p>
+
+<h2 id="toc_2">Introduction</h2>
+
+<p>There are two parameters that must minimally be provided to run a GENFIRE reconstruction:</p>
+
+<ol>
+<li><p>Filename containing the projection data. This can be in .mrc, .npy (numpy), or .mat (MATLAB) format as a N x N x num_projections 3D array.</p></li>
+<li><p>Filename containing the Euler angles. These should be in a num_projection x 3 array containing columns phi, theta, psi. The file format can be .npy (numpy), .mat (MATLAB), or a plain .txt delimited by white-space.</p></li>
+</ol>
+
+<p>In addition, a 3D binary support may be provided that defines a region of 1&#39;s outside of which the reconstruction is constrained to be 0. If no support is provided or the &quot;Use default support&quot; box is checked, a loose support will be generated automatically based upon the dimensions of the projections and the oversampling ratio. For example, if the projections are each 100x100 pixels and an oversampling ratio of 3 is used, a default support of size 300x300x300 will be created where the central 100 voxel cube is set to 1.</p>
+
+<p><a name = "gui-params"></a></p>
+
+<h2 id="toc_3">Other GUI parameters</h2>
+
+<p>Here is a description of the other parameters you can adjust within the GUI. We will explore some of these in more depth later.</p>
+
+<div><pre><code class="language-none">- Results Filename : The filename where the 3D reconstruction volume will be saved. The extension must be one of the three file formats currently supported (.mrc, .npy, or .mat). This root of this filename will also be used as a base to choose names for .txt files containing the error metrics.
+- Resolution Extension/Suppression : How to apply resolution extension/suppression. More details can be found in the supplementary information of doi:10.1038/s41598-017-09847-1
+    - On : Apply a resolution extension step followed by suppression. This can help with noisy data.
+    - Off : Enforce all Fourier constraints at every iteration
+    - Extension Only : Apply a resolution extension but no suppression. Usually not useful.
+- Number of Iterations : How many GENFIRE iterations to run before terminating.
+- Gridding Method : Procedure to use for assembling the 3D Fourier grid from 2D projections. The FFT method computes the 2D FFT of each projection and assembles the grid from these values. The DFT method explicitly computes the nearest Fourier component for to each grid point and assembles from these values. The FFT method is faster but less accurate than the DFT.
+- Enforce Resolution Circle : If enabled, no Fourier datapoints will be allowed to exist at frequencies beyond the Nyquist limit (these are the components near the corners of the 3D volume)
+- Permit Multiple Grid-Point Matches : If enabled, allow measured data to be included in the gridding calculation of multiple Fourier grid points. When disabled, only the nearest grid point is considered a candidate. This can be useful if the data is particularly sparse.
+- Oversampling Ratio : Determines the amount of zero padding to apply to the projections prior to gridding and thus determines the 3D reconstruction. The reconstruction array size will be equal to the size of each (square) projection multiplied by this number.
+- Interpolation Cutoff Distance (pixels) : The limiting distances beyond which measured data will not be considered for gridding. In other words, at each Fourier grid point a sphere of this radius is drawn in K-space and only measure Fourier components that fall within it will be considered for gridding. Lower values will produce more accurately gridded voxels, but in general fewer of them.
+- Constraints : Optional constraints in the reconstruction
+    - Positivity : Each iteration, negative reconstruction values will be set to 0.
+    - Support : Each iteration, reconstruction voxels not within the support region will be set to 0.
+- Calculate Rfree : If enabled, 5% of the measured data will randomly be withheld from the reconstruction, and at each iteration the recovered value will be compared with the withheld one. This error is calculated both as a function of frequency and across all values and is stored in plain .txt files. Specifically, if your resulting reconstruction is stored in “results.mrc” then “results_errK.txt” contains the reciprocal space error vs iteration number, “results_Rfree_total.txt” contains the value of Rfree across all withheld datapoints for each iteration, and “results_Rfree_bybin.txt” subdivides the values of Rfree into 1-pixel thick bins and thus is a 2D array representing the value of Rfree in each bin for each iteration.</code></pre></div>
+
+<p><a name = "inspecting-data"></a></p>
+
+<h2 id="toc_4">Inspecting the data</h2>
+
+<p>Within the &quot;data&quot; folder is a file called &quot;projections_FePt.mat&quot; containing projection obtained by multislice STEM simulation. The sample is a small FePt nanoparticle containing a total of 321 atoms. GENFIRE can read projections from .mrc, .mat, and .npy files. More details about file formats can be found <a href="http://genfire-em.com/about/">on the about page</a>.</p>
+
+<p>If you would like to explicitly convert the .mat file to a .npy example for doing your own analysis in Python, GENFIRE provides a convenient wrapper that can read/write between these various filetypes with ease. </p>
+
+<div><pre><code class="language-python"># convert_extensions.py
+
+# Basic script for converting projections from one file type to another
+import genfire.fileio
+
+filename_in = &#39;data/projections_FePt.mat&#39;
+filename_out = &#39;data/projections_FePt.npy&#39;
+
+arr = genfire.fileio.readVolume(filename_in)
+genfire.fileio.writeVolume(filename_out, arr)</code></pre></div>
+
+<p>This code may also be found in the &quot;convert_extensions.py&quot; script.</p>
+
+<p>The projection data can be viewed by running the &quot;view<em>projections.py&quot; script, which is copied here for completeness. It takes as an input parameter the filename with projections and displays them, i.e. `python3 view</em>projections.py data/projections_FePt.mat`</p>
+
+<div><pre><code class="language-python3"># view_projections.py
+
+import genfire.fileio
+import matplotlib.pyplot as plt
+import sys
+
+# set default projection file if none was provided
+if len(sys.argv) &lt; 2:
+    file_projections = &#39;data/projections_FePt.mat&#39;
+else:
+    # verify the file exists
+    from os.path import isfile
+    file_projections = sys.argv[1]
+    if not isfile(file_projections):
+        raise IOError(&quot;File {} does not exist!&quot;.format(file_projections))
+
+arr = genfire.fileio.readVolume(file_projections)
+
+for i in range(arr.shape[2]):
+    plt.figure(42)
+    plt.imshow(arr[:, :, i])
+    plt.title(&quot;Projection #{}/{}\nPress any key to advance or click the mouse to exit&quot;.format(i, arr.shape[2]))
+    plt.draw()
+    plt.pause(1e-6) # forces figure to be rendered
+    if not plt.waitforbuttonpress(None):
+        exit(1)
+</code></pre></div>
+
+<p>Note that the tilt axis is oriented horizontally. As indicated by the title text, you can either press keys to continue displaying projections, or click a mouse button to exit. Note that clicking the &quot;X&quot; button won&#39;t actually exit the Python process.</p>
+
+<p><a name = "running-a-recon"></a></p>
+
+<h2 id="toc_5">Running a reconstruction</h2>
+
+<p>To run a reconstruction, click &quot;Select Projection File&quot; and choose &quot;projections_FePt.mat&quot; with in the data folder. Next, click &quot;Select Angle File&quot; and choose &quot;angles.mat&quot;. For now, set &quot;Resolution Extension/Suppression&quot; off (we will explore more later). Leave the other parameters default. The enormous &quot;Launch Reconstruction&quot; button should have turned green indicating the existing parameters appear to be okay. Note that the parameter validation routine is relatively simple and will not catch all possible mistakes in the input data format -- it is just checking that the input data is of acceptable file types.</p>
+
+<p><img src="img/gui_ready_FePt.png" width=500px></img></p>
+
+<p>Click &quot;Launch Reconstruction&quot;, and wait for the iterations to complete. Each iteration, GENFIRE prints the current iteration number and the current value of the reciprocal error, which. converges to a reasonably small value if the data is good. Once the iterations are complete you will see something like this.</p>
+
+<p><img src="img/gui_finished_noiseless_2.png" width=500px></img></p>
+
+<p>So the converged error was around 19%. This simulated data is aligned exactly and has no noise added, so this error is mostly due to nonlinear STEM effects and gridding errors.</p>
+
+<p>The reconstruction is written out in &quot;results.mrc&quot;. There are also three additional txt files containing various error metrics in files with names derived from that of the reconstruction. In this example they are: &quot;results<em>errK.txt&quot; which contains the reciprocal space error vs iteration, &quot;results</em>Rfree<em>total.txt&quot; which contains the value of Rfree vs iteration for all withheld values, and &quot;results</em>Rfree<em>bybin.txt&quot; which is a num</em>bins x num_iterations array containing the value of Rfree within each one-pixel wide spatial frequency bin across every iteration.</p>
+
+<p><a name = "reconstruction-summary"></a></p>
+
+<h4 id="toc_6">Reconstruction Summary</h4>
+
+<p>To view a summary of the reconstruction and these error metrics, click &quot;Summarize Results&quot; and choose &quot;results.mrc&quot;. This functionality will check for the appropriately named error files and load them too, if they exist -- so if you move the error files or change their name note that they will not be useful here.</p>
+
+<p><img src="img/gui_summarize_results.png" width=500px></img></p>
+
+<p>On the left is a simple visualization of the reconstruction volume showing a projection along each of the X, Y, and Z directions and the central slice of the reconstruction volume. The upper right contains the reciprocal error vs iteration, and below that is the total value of Rfree vs iteration. In general these two curves should mirror each other, with Rfree being slightly higher in magnitude. The lower right curve shows the value of Rfree as a function of spatial frequency at the final iteration. The low frequency values of this curve can be a little hard to interpret because there may be a very small number of samples (recall Rfree takes 5% of the measured values, which are already sparse). Usually one will observe that the Rfree vs spatial frequency curve slopes upward, indicating that the higher spatial frequency components are more difficult to recover.</p>
+
+<p><a name = "volume-slicer"></a></p>
+
+<h4 id="toc_7">Volume Slicer</h4>
+
+<p>To view the reconstruction volume slice-by-slice, select from the toolbar</p>
+
+<div><pre><code class="language-none">View Volume -&gt; Volume Slicer</code></pre></div>
+
+<p>and choose the reconstruction. </p>
+
+<p><img src="img/gui_volume_slicer.png" width=550px></img></p>
+
+<p>This display shows one-pixel thick slices through the volume that can be moved with the scroll bars. The &quot;Lock Colormap&quot; check box will freeze the current colorscaling to prevent each slice being drawn with different contrast values. This module is intended for simple screening, and there are many tools like tomviz that are better suited for in depth analysis of reconstruction volumes.</p>
+
+<p><a name = "exploring-variations"></a></p>
+
+<h2 id="toc_8">Exploring Variations</h2>
+
+<p>Now let&#39;s explore various ways in which different parameters or data inputs affect the reconstruction in GENFIRE.</p>
+
+<p><a name = "dft-fft"></a></p>
+
+<h3 id="toc_9">DFT vs FFT Gridding</h3>
+
+<p><img src="img/gui_dft_gridding.png" width=550px></img></p>
+
+<p>Setting the gridding method to DFT will produce a more accurate reconstruction, but will take more time. The recommended procedure is to first use the FFT gridding method for quick feedback and tuning some of the other GENFIRE parameters, and then use the DFT method at the very end to produce a final product.</p>
+
+<p>The final value of the reciprocal error is several percent lower, indicating the reconstruction with DFT gridding is better. Note the time difference for gridding for DFT:
+<img src="img/gui_dft_time.png" width=550px></img></p>
+
+<p>vs FFT:</p>
+
+<p><img src="img/gui_fft_gridding_time.png" width=550px></img></p>
+
+<p>Visually, you can see improvement in the reconstruction.</p>
+
+<p><img src="img/gui_summary_dft.png" width=550px></img></p>
+
+<p>Here is the associated figure exploring DFT/FFT gridding from the GENFIRE paper. The middle panel shows the Fourier shell correlation (FSC) between a known model and reconstructions produced with DFT/FFT gridding, and the lower shows the K-error with which you are already familiar.</p>
+
+<p><img src="img/genfire_figure_gridding.png" width=550px></img></p>
+
+<p><a name = "iteration-num"></a></p>
+
+<h3 id="toc_10">Iteration Number</h3>
+
+<p>Adjusting the number of iterations to run in GENFIRE is a tradeoff between reconstruction quality and computation time. If too few iterations are run, the reconstruction does not have time to converge. However, at some point it will converge and running further iterations won&#39;t change the reconstruction very much. There&#39;s generally no negative effect of running &quot;too many&quot; iterations, so when in doubt run many (perhaps several hundred).</p>
+
+<p>Here is an example of what can go wrong if too few iterations are run.</p>
+
+<p><img src="img/gui_iterations.png" width=550px></img></p>
+
+<p><img src="img/summarize_iterations.png" width=550px></img></p>
+
+<p><a name = "interp-distance"></a></p>
+
+<h3 id="toc_11">Interpolation Cutoff Distance</h3>
+
+<p>The interpolation cutoff distance determines the maximum distance (in units of reciprocal-space voxels) that measured data can be away from a given grid point and be included in the calculation of that grid point. From the set of all measured datapoints within this distance from a grid point, the gridded value is determined as an average of all the relevant Fourier components weighted by their inverse distance and divided by the sum of these weights. In this way a Fourier component that is twice as far from the grid point as a second Fourier component will be weighted half as much. For a 1D example, if a grid point <code>F_1</code> located at Kx = 0 and there are measured datapoints <code>M_1</code> at Kx = 0.1 and <code>M_2</code> at Kx = 0.2 then   </p>
+
+<p><code>F_1</code> = (<code>M_1</code>(1/0.1) + <code>M_2</code>(1/0.2)) / (1/0.1 + 1/0.2)  </p>
+
+<p>In practice, there is also a maximum allowable weight to prevent singularities for perfectly matched grid points such as those that occur for the zero-degree projection.</p>
+
+<p>If the interpolation distance is set too low, then the gridded points will be accurate but also very sparse. Here is an extreme case:</p>
+
+<p><img src="img/gui_interplow.png" width=550px></img></p>
+
+<p><img src="img/summary_interplow.png" width=550px></img></p>
+
+<p>Conversely, if the interpolation cutoff distance is set too high, then the accuracy of the gridded points will suffer. The gridding process also takes longer with a larger interpolation distance as more measured data is included in the computation. In this case the gridding with the (very large) interpolation distance of 2.5 took 194s even with the FFT method compared to &lt; 2s with the default parameter.</p>
+
+<p><img src="img/gui_interphigh.png" width=550px></img></p>
+
+<p><img src="img/summary_interphigh.png" width=550px></img></p>
+
+<p>A few comments. The interpolation distance can be tuned extensively, but if you are unsure it is better to err on the side of too large than too small. Better yet, just use the default parameters. Note that in the high interpolation cutoff case the reciprocal error converges extremely quickly. This is because there are more measured datapoints in reciprocal space, and thus the Fourier constraint is stronger which accelerates convergence. The interpolation cutoff is measured in units of reciprocal pixels, and thus it is couples to the oversampling ratio. If the oversampling ratio is decreased, the same value of the interpolation cutoff distance results in a less accurate gridding. Here we decrease it to 2 (this parameter is discussed more later).</p>
+
+<p><img src="img/gui_interphigh_os2.png" width=550px></img></p>
+
+<p>Particularly in the top-middle panel, you can observe significant artifacts.</p>
+
+<p><img src="img/summary_interphigh_os2.png" width=550px></img></p>
+
+<p><a name = "oversampling-ratio"></a></p>
+
+<h3 id="toc_12">Oversampling Ratio</h3>
+
+<p>The oversampling ratio determines the amount of zero-padding that is added to the projections prior to gridding and reconstruction. Adding this zero region increases the pixel sampling in reciprocal space, and this finer sampling results in more accurate gridding at the cost of a larger array size, which requires more RAM and more computation time. Usually, this parameter should be at least 3, and more is better. Using an oversampling ratio of 2 will produce a fairly poor reconstruction that resembles the true structure but contains artifacts.</p>
+
+<p><img src="img/gui_os2.png" width=550px></img>
+<img src="img/summary_os2.png" width=550px></img></p>
+
+<p>A higher oversampling ratio of 5 will take longer to complete (275s vs 13s in this case) and require more RAM, but will produce a reconstruction with lower reciprocal error and highest fidelity.</p>
+
+<p><img src="img/gui_os5.png" width=550px></img>
+<img src="img/summary_os5.png" width=550px></img></p>
+
+<p>As a reminder, the interpolation cutoff distance is coupled to the oversampling ratio, so if you increase the oversampling ratio be aware that the size of a pixel in reciprocal space changes.</p>
+
+<p><a name = "misaligned-data"></a></p>
+
+<h3 id="toc_13">Misaligned Data</h3>
+
+<p>Unlike 3D phase retrieval, in tomography the projections have phases. An unfortunate side-effect of this is that each projection can have an independent translational shift that must be corrected in order to get a good reconstruction. For this reason, projections must be aligned prior to reconstruction. There are many ways to accomplish this alignment including (nonexhaustively):</p>
+
+<div><pre><code class="language-none">1. Center of mass alignment - fix the center of mass of the sample to the center of the projection image
+2. Cross correlation alignment - works for a single-tilt axis dataset by projecting each 2D projection to a 1D curve on the rotation axis. This curve should ideally be constant across the whole tilt series.
+3. Fiducial markers - seed the sample with a distribution of small particles that are then used to align
+4. Orientation refinement - using a preliminary reconstruction, improved orientations may be found for the input projections followed by a second reconstruction. This process may be repeated in an iterative fashion until alignment converges.</code></pre></div>
+
+<p>To demonstrate this, I applied random translational shifts to each projection in the X and Y distribution (drawn from a normal distribution with mean 0 and standard deviation 1 that was rounded). We can view them to observe the misalignment.</p>
+
+<div><pre><code class="language-python">python3 view_projections.py data/projections_FePt_misaligned.mat</code></pre></div>
+
+<p>And then reconstruction them</p>
+
+<p><img src="img/gui_misaligned.png" width=550px></img>
+<img src="img/summary_misaligned.png" width=550px></img></p>
+
+<p>We can see that misalignment can signifcantly affect the reconstruction. The K-error is much higher and the reconstruction quality is significantly affected. Tracing atoms from such a reconstruction becomes quite difficult, and when combined with a missing wedge (discussed next), we can see that alignment is one of the most important steps in high-resolution 3D image reconstruction.</p>
+
+<p><a name = "missing-wedge"></a></p>
+
+<h3 id="toc_14">Missing Wedge</h3>
+
+<p>Due to a number of factors such as thickness effects or stage geometry, high tilt angles are often unaccessible experimentally. The result is a &quot;missing wedge&quot; of unmeasured Fourier space that introduces artifacts in the reconstruction do to anisotropic sampling.</p>
+
+<p>To simulate this, the projection files appended with &quot;_misaligned&quot; contain only projections with tilt angles of +- 50 degrees.</p>
+
+<p><img src="img/gui_mw.png" width=550px></img></p>
+
+<p>Be aware the K-error is not negatively effected by the presence of a missing wedge; in fact it decreases. This is because the Fourier constraint is weaker. By now you hopefully can see that the K-space error is useful for monitoring convergence and comparing reconstructions produced under similar conditions but does not tell the whole story.</p>
+
+<p><img src="img/summary_mw.png" width=550px></img></p>
+
+<p>Zooming in on the images... </p>
+
+<p><img src="img/summary_mw_zoomed.png" width=550px></img></p>
+
+<p>The missing-wedge artifacts are most obvious in the top-middle panel. The tilt axis for these simulations is along the y-axis (the theta Euler angle), and in this geometry the zero-degree projection lies in the XY plane. If you focus on the XZ slice, the rotation axis goes into/out of the page and the zero-degree position of the stage corresponds to the horizontal direction. This stage is then tilted +- 50 degrees and thus the vertical line at theta=90 is maximally unmeasured. The result of this geometry is the X-shaped artifacts you observe at approximately +-50 degree angles. Also, note that the atoms are distorted in the left-right direction relative to the vertical. In reality, the atoms are isotropic, and this distortion is entirely due to the missing wedge.</p>
+
+<p><a name = "noisy-data"></a></p>
+
+<h3 id="toc_15">Noisy Data</h3>
+
+<p>The presence of noise degrades the reconstruction and introduces artifacts. The severity of this degradation is related to the severity of the noise, and correspondingly you should expect to observe increased error metrics and decreased visual reconstruction quality as the noise level is increased. One potential way to deal with noise is described in the next section.</p>
+
+<p><img src="img/gui_noisy.png" width=550px></img>
+<img src="img/summary_noisy.png" width=550px></img></p>
+
+<p><a name = "res-ex-supp"></a></p>
+
+<h3 id="toc_16">Resolution Extension/Suppression</h3>
+
+<p>Resolution extension/suppression is a technique that changes the Fourier constraint over the course of the reconstruction iterations in a way that is intended to help with noise. For the first few iterations, only the lowest (and least noisy) spatial frequency reciprocal grid points are enforced. This resolution &quot;cutoff&quot; is then expanded outwards so that gradually higher and higher spatial frequency information is enforced. This continues until halfway through the total number of iterations, at which point all measured data is enforced. The process is then run in reverse and the cutoff relaxed until for the final iterations once again only the lowest spatial frequency information is enforced. The logic is explained in detail in the GENFIRE paper, but essentially the idea is to exploit the fact that SNR changes as a function of spatial frequency in a way that almost always results in more noise affecting the higher frequencies. By removing the noisier, high frequency components at the end of the reconstruction it is allowed to evolve in a way that can benefit the reconstruction.</p>
+
+<p>Let&#39;s try a reconstruction with resolution extension/suppression</p>
+
+<p><img src="img/gui_resex.png" width=550px></img>
+<img src="img/summary_resex.png" width=550px></img></p>
+
+<p>Notice some funny business happens with the K-error -- it goes up quite a bit. The presence of noise decreases the correctness of the measured values, so a perfect reconstruction would still demonstrate significant error by this metric. The claim is that the resolution extension technique changes the reconstruction in a way that is more faithful to the true structure despite deviating from the measured data at high frequencies. This claim is supported by the relevant figure from the GENFIRE paper.</p>
+
+<p><img src="img/genfire_resex_figure.png" width=550px></img></p>
+
+<p><a name = "tight-support"></a></p>
+
+<h3 id="toc_17">Refining the Support</h3>
+
+<p>Although a loose support will get you pretty far with GENFIRE, a tight support provides a stronger constraint. Often, we will run obtain a preliminary reconstruction with a loose support and then use that reconstruction to create a tighter support, perhaps by smoothing and thresholding. To show how we might do that, we will explore the make_support.ipynb Jupyter notebook. </p>
+
+<p>Don&#39;t worry if you have never used Jupyter notebooks -- you can ignore this part. However, they are an extremely popular and useful technology, and it is a good idea to at least be aware of their existence.</p>
+
+<p>You can install and start jupyter notebooks with </p>
+
+<div><pre><code class="language-none">pip3 install jupyter-notebook</code></pre></div>
+
+<p>Then navigate to the folder with the rest of the code for this tutorial and type </p>
+
+<div><pre><code class="language-none">jupyter notebook</code></pre></div>
+
+<p>This will launch a local web server that is running the Jupyter client. From here you can open make_support.ipynb</p>
+
+<p><em>Here we move over to the Jupyter notebook and create a support and then save it to &quot;tightSupport.npy&quot;</em></p>
+
+<p>Now let&#39;s run a reconstruction with this support.
+<img src="img/gui_tightsupport.png" width=550px></img></p>
+
+<p><img src="img/summary_tightsupport.png" width=550px></img></p>
+
+<p>The reciprocal error increases with a tighter support, and this is because a tight support is a stronger constraint in real space. By the convolution theorem, applying a binary mask in real space convolves K-space with the Fourier transform of the support, which conflates Fourier components.</p>
+
+<p>It&#39;s also worth noting to that familiar with phase retrieval in coherent diffraction imaging (CDI) that the support constraint in a GENFIRE is not nearly as critical to the reconstruction as in CDI. The difference is in 2D CDI one has a near-complete set of Fourier magnitudes with no phases, whereas in 3D GENFIRE reconstructions there is a sparse sampling of datapoints that do have phases. The presence of phase information, particularly at low resolution, in GENFIRE will usually establish the boundary of the object successfully even without a tight support.</p>
+
+<h2 id="toc_18">Simulating linear projection data from a noncrystalline sample</h2>
+
+<p>GENFIRE also has functionality for simulating linear projections for a model. We will now demonstrate this and for the sake of diversity will use a noncrystalline sample.</p>
+
+<p>First we have to create a simulated dataset so that we have
+something to work with. For that we can use the projection calculator, which can be accessed from a drop-down menu at the top of the screen:</p>
+
+<div><pre><code class="language-none">Projection Calculator -&gt; Launch Projection Calculator</code></pre></div>
+
+<p>You should now have a blank instance of the projection calculator, like this:</p>
+
+<p><img src="img/ProjectionCalculator_blank.png" width=500px></img></p>
+
+<p>Now we need to select a 3D model. Click Browse, find &quot;vesicle.mrc&quot; in the data
+directory of the GENFIRE source code, then click open. You will be prompted to select
+an oversampling ratio. The oversampling ratio controls the amount of zero padding applied 
+to the model -- specifically the oversampling ratio is the total array size divided
+by the size of the object. The purpose of this zero-padding is to increase the accuracy
+of the projection calculation. The tradeoff is that larger oversampling ratios mean the
+array size is bigger, and, therefore, slower. I find that an oversampling ratio of 3
+is a good choice. Click OK, and GENFIRE will load the model, pad it,
+compute the 3D FFT, and construct a linear interpolator. Once finished projections 
+may be calculated relatively quickly.</p>
+
+<p>Once loaded the zero-degree projection of the model will appear in the display.</p>
+
+<p><img src="img/ProjectionCalculator_modelLoaded.png" width=500px></img></p>
+
+<p>At this point you can adjust the Euler angles to explore what different views of the
+model look like. Note that these are projection images, not surface renderings. If you 
+are new to tomography, take a moment to explore how the projection images change as you
+adjust the angles, in particular theta. This can give you some really nice intuition as 
+to how 3D information is encoded in the 2D projection series.<br>
+Once you are ready, calculate a projection image dataset from this model by clicking &quot;Calculate Projection
+Series from Model&quot;</p>
+
+<p><img src="img/CalculateProjection_dialog_empty.png" width=500px></img></p>
+
+<p>From this dialog you can specify the Euler angles for each of the calculated projections. 
+To accomplish this you have two options.</p>
+
+<ol>
+<li><p>Provide the Euler angles as a space-delimited .txt file where each 
+row corresponds to one projection and provides the Euler angles as phi theta psi.
+If you are confused about this format you can view the outputted file with option 2 to see an example.
+Note there is no limitation on the angles for GENFINRE like there are in many single-axis tomography
+reconstruction techniques, so you can use whatever you&#39;d like.</p></li>
+<li><p>Specify a single-axis tilt series. Specify the tilt angle, theta, 
+as start = 0, step = 2, stop = 180 to calculate 91 equally spaced projections with no missing wedge.
+Choose an output filename for the projection, make sure &quot;Save Angles&quot; is checked, 
+then click &quot;Calculate Projections&quot; to perform the calculation. </p></li>
+</ol>
+
+<p><img src="img/CalculateProjection_dialog_ready.png" width=500px></img></p>
+
+<p>The calculation runs in the background on a separate thread. Once it is finished you will hopefully see
+a success message like this</p>
+
+<p><img src="img/gui_ready.png" width=500px></img></p>
+
+<p>Note that the file created containing the Euler angles is the same name as the corresponding
+projections with &quot;<em>euler</em>angles&quot; appended, in case you want an example of how to format
+your own angle files.</p>
+
+<p>For now, we will just use the default reconstruction parameters (more detail is given on them HERE).
+Verify that the filenames of your data are correct, then start the reconstruction
+by clicking the enormous green button.</p>
+
+<p><img src="img/gui_finished.png" width=500px></img></p>
+
+<p>You can now view the error curves and a simple visualization of the results by clicking &quot;Summarize Results&quot;
+and selecting the file corresponding to &quot;Results Filename&quot;. This file contains the reconstruction volume, and there are also some .txt files that are generated with a common root name. These .txt files contain the error curves for the reciprocal error and Rfree. Specifically, if your resulting reconstruction is stored in &quot;results.mrc&quot; then &quot;results<em>errK.txt&quot; contains the reciprocal space error vs iteration number, &quot;results</em>Rfree<em>total.txt&quot; contains the value of Rfree across all withheld datapoints for each iteration, and &quot;results</em>Rfree_bybin.txt&quot; subdivides the values of Rfree into 1-pixel thick bins and thus is a 2D array representing the value of Rfree in each bin for each iteration.</p>
+
+<p><img src="img/summarize_results.png" width=500px></img></p>
+
+<p>What&#39;s all this, you ask?</p>
+
+<p>The left figure shows projection images of the reconstruction along the 3 principal 
+axes and central slices. You&#39;ll be able to visualize the volume more closely in a moment.
+The top error curve plots the total reciprocal error vs iteration number. This is the R-factor
+between the FFT of the reconstruction and the entire constraint set. By default the reconstruction
+is performed using resolution extension/suppression, so for the early iterations only the lowest
+resolution constraints are enforced, but the error is still compared to all constraints so there 
+are dips each time the constraint set is updated. This style of constraint enforcement is useful 
+for noisy data -- here we have a noiseless simulation so you won&#39;t see much difference in the 
+reconstruction if you turn it off.</p>
+
+<p>The middle and bottom curves summarize the results for R-free. GENFIRE implements a modified version 
+of the concept of R-free from X-ray crystallography. First, the constraint set is divided up into
+bins (10 by default). In each spatial frequency bin, 5% of the values are withheld from the reconstruction.
+At each iteration, the R-factor is calculated between the voxels in reciprocal space and these withheld values.
+The purpose of this is a metric for prevention of overfitting to the data. Low values of R-free indicate
+that recovered values for missing datapoints match the (withheld) input data, and by extension 
+suggests confidence in reconstructed values where there is no measured datapoint to compare.<br><br>
+The middle curve shows the mean value of R-free across all resolutions at each iteration. For clean
+data it will generally mirror the reciprocal error curve. The bottom curve shows the value of R-free for
+each spatial frequency bin at the final iteration. It generally increases with spatial frequency. For this
+noiseless simulation the values are quite low, but for noisy data R-free will be higher. It is important
+to remember that high values of R-free are not necessarily bad, they simply mean there is difference between
+the recovered and measured reciprocal-space data. For noisy data this may be what you want, as resolution
+extension/suppression can act as a denoising technique. However, R-free will also be high if your data
+is not good. This illustrates the importance of considering multiple metrics when drawing conclusions about 
+your results. Remember - &quot;Garbage in, garbage out&quot;.</p>
+
+<p>To explore your reconstruction, open the <em>Volume Slicer</em></p>
+
+<div><pre><code class="language-none">Volume Slicer -&gt; Launch Volume Slicer</code></pre></div>
+
+<p>and select your results.</p>
+
+<p><img src="img/volume_slicer.png" width=500px></img></p>
+
+<p>Here you can view individual layers of your reconstruction (or any volume) along the 3 principal directions.
+You can also use this module to view your calculated projections.</p>
+
+<p>Hopefully this tutorial has been helpful. Happy reconstructing!</p>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.python={"triple-quoted-string":{pattern:/"""[\s\S]+?"""|'''[\s\S]+?'''/,alias:"string"},comment:{pattern:/(^|[^\\])#.*/,lookbehind:!0},string:/("|')(?:\\?.)*?\1/,"function":{pattern:/((?:^|\s)def[ \t]+)[a-zA-Z_][a-zA-Z0-9_]*(?=\()/g,lookbehind:!0},"class-name":{pattern:/(\bclass\s+)[a-z0-9_]+/i,lookbehind:!0},keyword:/\b(?:as|assert|async|await|break|class|continue|def|del|elif|else|except|exec|finally|for|from|global|if|import|in|is|lambda|pass|print|raise|return|try|while|with|yield)\b/,"boolean":/\b(?:True|False)\b/,number:/\b-?(?:0[bo])?(?:(?:\d|0x[\da-f])[\da-f]*\.?\d*|\.\d+)(?:e[+-]?\d+)?j?\b/i,operator:/[-+%=]=?|!=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]|\b(?:or|and|not)\b/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+
+</body>
+
+</html>
